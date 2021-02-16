@@ -1,0 +1,22 @@
+:host{
+  .toast-container{
+    width: 300px ;
+    height: 100px;
+    background-color: #e3fcef;
+    border-left: 5px solid #36b37e ;
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    display: flex;
+    align-items: center;
+
+    img{
+      margin-left: 5px;
+    }
+    p{
+      font-weight: 500;
+      color: #36b37e;
+      margin-left: 10px;
+    }
+  }
+}

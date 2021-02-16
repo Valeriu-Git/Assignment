@@ -1,0 +1,27 @@
+:host{
+  .navigation-container{
+    height: 70px;
+    background-color:#1d4f8f;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    .logo{
+      width: 60px;
+      margin-left: 20px;
+    }
+
+    .register-btn{
+      border: 0;
+      margin-left: 20px;
+      cursor: pointer;
+      padding: 10px;
+      background: aliceblue;
+      border-radius: 5px;
+    }
+  }
+}

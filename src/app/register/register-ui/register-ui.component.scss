@@ -1,0 +1,58 @@
+:host{
+
+  .container{
+    width: 100%;
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  form{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 200px;
+
+   & > *{
+     margin-bottom: 10px;
+   }
+    .submit-btn{
+      background-color: #1d4f8f;
+      padding: 5px 10px;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .disabled-btn{
+      cursor: not-allowed;
+    }
+
+    .gdpr-container{
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .details{
+        color: #1d4f8f;
+        font-weight: 600;
+        font-size: 12px;
+        cursor: pointer;
+      }
+    }
+
+    .error-message{
+      margin: 0;
+      font-size: 11px;
+      color: red;
+    }
+  }
+
+}
+
+//::ng-deep .mat-form-field-flex{
+//  height: 65px;
+//}

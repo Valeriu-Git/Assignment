@@ -1,0 +1,48 @@
+<div class="container">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmitForm()">
+
+    <mat-form-field >
+      <mat-label>Nume</mat-label>
+      <input matInput placeholder="Popescu" formControlName="firstName">
+    </mat-form-field>
+
+    <p class="error-message" *ngIf="formGroup.get('firstName').invalid && formGroup.get('firstName').touched">Numele este invalid!</p>
+
+    <mat-form-field >
+      <mat-label>Prenume</mat-label>
+      <input matInput placeholder="Ion" formControlName="lastName">
+    </mat-form-field>
+
+    <p class="error-message" *ngIf="formGroup.get('lastName').invalid && formGroup.get('lastName').touched">Prenumele este invalid!</p>
+
+    <input type="date" formControlName="dateOfBirth">
+
+    <p class="error-message" *ngIf="formGroup.get('dateOfBirth').invalid && formGroup.get('dateOfBirth').touched">Data de nastere este invalida!</p>
+
+    <mat-form-field >
+      <mat-label>Search by</mat-label>
+      <input matInput placeholder="department" [formControl]="searchFormControl">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Options</mat-label>
+      <mat-select #select (selectionChange)="onSelectionChange()">
+        <mat-option *ngFor="let option of dropdownOptions" [value]="option">
+          {{option.denumire}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <input type="tel" formControlName="phoneNumber">
+
+    <div class="gdpr-container">
+      <mat-checkbox class="example-margin" formControlName="gdpr" (change)="onCheckboxChange()">Acord gdpr</mat-checkbox>
+      <p class="details" (click)="onMoreDetailsClick()">More details here</p>
+    </div>
+    <button [ngClass]="{'disabled-btn':!formGroup.get('gdpr').value}" [disabled]="!formGroup.get('gdpr').value" class="submit-btn" type="submit">Submit form</button>
+  </form>
+</div>
+
+
+<app-gdpr [hidden]="!isPopupVisible" (closePopup)="onClosePopup()"></app-gdpr>
+
